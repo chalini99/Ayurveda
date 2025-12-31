@@ -11,32 +11,87 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 />
-
+ 
   <!-- CSS FILE -->
   <link rel="stylesheet" href="style/about.css">
+
+
 </head>
+
 <body>
-<div id="header"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-container">
+
+      <!-- LOGO (LEFT) -->
+      <div class="logo">
+        <img src="./images/logoBG.png" alt="Aksharam Ayurved">
+        <div>
+          <strong>AKSHARAM</strong>
+          <small>ayurved hospital</small>
+        </div>
+      </div>
+
+      <!-- TOGGLE (RIGHT - MOBILE) -->
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+      <!-- NAV LINKS -->
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services ▾</a>
+        <a href="#">Contact Us</a>
+      </nav>
+
+      <!-- ACTIONS -->
+      <div class="nav-actions">
+        <div class="social-icons-premium">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <button class="help-btn">Get Help?</button>
+      </div>
+
+    </div>
+  </header>
+  <!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" aria-label="Close menu">✕</button>
+
+  <nav class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#">Services <span>▾</span></a>
+    <a href="#">Contact Us</a>
+  </nav>
+</div>
+
 
 <script>
-  fetch("header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".menu-toggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeBtn = document.querySelector(".close-menu");
+
+    toggle.addEventListener("click", () => {
+      mobileMenu.classList.add("active");
     });
+
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+    });
+  });
 </script>
 
 
-<header class="navbar">
 
-    
+</body>
 
- <nav class="nav-links">
-    
-   
-    </nav>
-    </header>
-    
+
+
 
 
   <section class="doctor-hero">

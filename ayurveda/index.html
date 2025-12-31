@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aksharam Ayurved</title>
-  <link rel="stylesheet" href="./style/index.css" />
+  <link rel="stylesheet" href="style/index.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link
   rel="stylesheet"
@@ -12,43 +12,83 @@
 />
 
 
-
 </head>
+
 <body>
 
-<header class="navbar">
-  <div class="logo">
-    <img src="images/logo.png" alt="Aksharam Ayurved">
-    <div>
-      <strong>AKSHARAM</strong>
-      <small>ayurved hospital</small>
-    </div>
-  </div>
-<!-- LEFT : LOGO -->
-    <div class="nav-left">
-      <img src="images/logo.png" alt="" class="logo">
-    </div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-container">
 
-    
-  <nav>
+      <!-- LOGO (LEFT) -->
+      <div class="logo">
+        <img src="./images/logoBG.png" alt="Aksharam Ayurved">
+        <div>
+          <strong>AKSHARAM</strong>
+          <small>ayurved hospital</small>
+        </div>
+      </div>
+
+      <!-- TOGGLE (RIGHT - MOBILE) -->
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+      <!-- NAV LINKS -->
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#">Services ▾</a>
+        <a href="#">Contact Us</a>
+      </nav>
+
+      <!-- ACTIONS -->
+      <div class="nav-actions">
+        <div class="social-icons-premium">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <button class="help-btn">Get Help?</button>
+      </div>
+
+    </div>
+  </header>
+  <!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" aria-label="Close menu">✕</button>
+
+  <nav class="mobile-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="#">Services ▾</a>
-    <a href="#">Contact Us</a>
+    <a href="service.html">Services <span>▾</span></a>
+    <a href="contact.html">Contact Us</a>
   </nav>
-
-  <div class="nav-right">
-    <div class="socials">
-       <div class="social-icons-premium">
-  <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-  <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-  <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-  <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
 </div>
-    </div>
-    <button class="help-btn">Get Help?</button>
-  </div>
-</header>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".menu-toggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeBtn = document.querySelector(".close-menu");
+
+    toggle.addEventListener("click", () => {
+      mobileMenu.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+    });
+  });
+</script>
+
+
+
+</body>
+
+
+
+
 
 <section class="hero">
   
@@ -76,7 +116,7 @@
     <div class="hero-actions">
       <button class="primary-btn">Book Tele-Consultation</button>
       <button class="secondary-btn">Explore Panchakarma Programs</button>
-      <a href="#" class="text-link">Learn About Beej Shuddhi</a>
+      <button class="secondary-btn">Learn About Beej Shuddhi</button>
     </div>
   </div>
 

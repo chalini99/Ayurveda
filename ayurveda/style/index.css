@@ -5,12 +5,363 @@
   font-family: 'Playfair Display', serif;
 }
 
-
+body > .site-header {
+  margin: 0;
+  padding: 0;
+}
+.hero {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
 
 body {
+  font-family: "Playfair Display", serif;
+  overflow-x: hidden;
   background: #fffaf5;
   color: #1f1f1f;
 }
+/* ===== HOME PAGE HEADER FIX ===== */
+body:not(.about-page) .nav-container {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+body:not(.about-page) .help-btn {
+  margin-top: 0;
+  align-self: center;
+}
+
+
+
+
+
+
+
+.logo {
+  height: 50px;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 95%;
+  margin: 20px auto;
+  padding: 18px 32px;
+  background: #ffffff;
+  border-radius: 22px;
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+}
+
+.logo img {
+  width: 42px;
+}
+
+.logo small {
+  display: block;
+  font-size: 12px;
+  color: #666;
+}
+
+nav a {
+  margin: 0 18px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.socials span {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 14px;
+}
+
+.help-btn {
+  background: #294d2b;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* ===== MOBILE ONLY ===== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  /* Header row: logo left, toggle right */
+  .navbar,
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Show toggle on mobile */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide menu items initially */
+  nav,
+  .nav-right,
+  .nav-actions {
+    display: none;
+    width: 100%;
+  }
+
+  /* When toggle is active */
+  .navbar.active nav,
+  .navbar.active .nav-right,
+  .navbar.active .nav-actions {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+  }
+}
+/* 🔥 MAKE TOGGLE VISIBLE ON MOBILE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    color: #1f1f1f;        /* dark icon */
+    font-size: 28px;
+    background: transparent;
+    z-index: 9999;
+  }
+}
+@media (max-width: 768px) {
+
+  .nav-links,
+  .nav-actions {
+    display: none;
+    width: 100%;
+  }
+
+  .site-header.active .nav-links,
+  .site-header.active .nav-actions {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+  }
+}
+/* ===== MOBILE FULLSCREEN MENU ===== */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 9999;
+  display: none;
+  padding: 24px;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+/* Close icon */
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Menu links */
+.mobile-nav {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav a {
+  padding: 18px 0;
+  font-size: 18px;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Hide desktop nav on mobile */
+@media (max-width: 768px) {
+  .nav-links,
+  .nav-actions {
+    display: none !important;
+  }
+}
+/* FORCE VISIBLE HAMBURGER ICON */
+
+/* FORCE VISIBLE CLOSE ICON */
+.close-menu {
+  color: #000 !important;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding: 8px 12px;
+  font-size: 24px;
+  z-index: 10001;
+}
+
+
+
+
+/* ===== DESKTOP HEADER ALIGNMENT FIX ===== */
+
+/* Header container */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo stays left */
+.logo {
+  flex-shrink: 0;
+}
+
+/* Nav links stay center */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Right side (icons + button) */
+.nav-actions {
+  display: flex;
+  align-items: center;   /* 🔥 THIS fixes vertical misalignment */
+  gap: 14px;
+}
+
+/* Social icons in one straight line */
+.social-icons-premium {
+  display: flex;
+  align-items: center;   /* 🔥 keeps icons perfectly aligned */
+  gap: 10px;
+}
+
+/* Ensure icons don’t stretch */
+.social-icons-premium a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Keep Get Help at extreme right */
+.help-btn {
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+
+/* ===== FIX HEADER ON SCROLL ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fffaf4; /* important to avoid transparency */
+}
+/* FORCE LOGO TO BE BIGGER */
+.site-header .logo img {
+  height: 130px !important;
+  width: auto !important;
+  max-height: none !important;
+  margin-left: -8px;
+}
+/* ALLOW HEADER TO GROW WITH LOGO */
+.site-header {
+  height: auto !important;
+}
+
+.nav-container {
+  min-height: 88px;     /* gives breathing room */
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .site-header .logo img {
+    height: 52px !important;
+  }
+
+  .nav-container {
+    min-height: 72px;
+  }
+}
+.logo strong {
+  font-size: 22px !important;
+  letter-spacing: 1px;
+}
+
+.logo small {
+  font-size: 14px !important;
+  color: #4f6b4f;
+}
+
+/* Allow logo to reach further left */
+.nav-container {
+  max-width: 100%;
+  padding-left: 12px;
+  padding-right: 24px;
+}
+/* ===== FORCE LOGO MORE LEFT (HOME PAGE SAFE FIX) ===== */
+
+/* Let header span full width */
+.site-header {
+  width: 100%;
+}
+
+/* Break container centering constraint */
+.site-header .nav-container {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding-left: 100px !important;  /* adjust: 8px / 6px if needed */
+  padding-right: 100px;
+}
+
+/* Fine-tune logo position */
+.site-header .logo {
+  position: relative;
+  left: -10px;   /* 👈 THIS WILL NOW WORK */
+}
+
+
+
+
+
+
+
+/* === HOME HERO FIX === */
+.hero {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+
 
 
 .hero {
@@ -64,69 +415,6 @@ body {
 
 
 
-
-
-.logo {
-  height: 50px;
-}
-
-/* NAVBAR */
-.navbar {
-  width: 95%;
-  margin: 20px auto;
-  padding: 18px 32px;
-  background: #ffffff;
-  border-radius: 22px;
-  display: flex;
-  position: sticky;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 42px;
-}
-
-.logo small {
-  display: block;
-  font-size: 12px;
-  color: #666;
-}
-
-nav a {
-  margin: 0 18px;
-  text-decoration: none;
-  color: #222;
-  font-weight: 500;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.socials span {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 6px 8px;
-  font-size: 14px;
-}
-
-.help-btn {
-  background: #294d2b;
-  color: #fff;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 30px;
-  cursor: pointer;
-}
 
 /* HERO */
 .hero {
@@ -288,15 +576,6 @@ nav a {
 
 
 
-
-
-
-
-
-
-
-
-
 .hero-trust {
   margin: 22px 0;
   display: flex;
@@ -352,6 +631,196 @@ primary-btn,
 .text-link:hover {
   border-color: #2f5c2a;
 }
+
+
+
+/* ===== HERO MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  .hero-section {
+    padding: 40px 16px;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .hero-left {
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .hero-left p {
+    font-size: 15px;
+  }
+
+  /* stats row */
+  .hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .hero-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-right img {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    border-radius: 22px;
+    object-fit: cover;
+  }
+
+}
+/* ===== HERO CTA MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .hero-cta a,
+  .hero-cta button {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .hero-cta a.link-style,
+  .hero-cta a:last-child {
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+}
+@media (max-width: 480px) {
+
+  .hero-left h1 {
+    font-size: 28px;
+  }
+
+  .hero-left p {
+    font-size: 14px;
+  }
+
+}
+/* ========= FORCE HERO MOBILE FIX ========= */
+@media (max-width: 768px) {
+
+  /* Force hero container */
+  .hero,
+  .hero-section,
+  .hero-container {
+    padding: 20px 16px !important;
+  }
+
+  /* Force left content center */
+  .hero-left {
+    width: 100% !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* Force CTA wrapper */
+  .hero-left > div:last-child,
+  .hero-cta,
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  /* Force ALL buttons & links */
+  .hero-left a,
+  .hero-left button {
+    width: 100% !important;
+    max-width: 280px !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  /* Fix overflowing text links */
+  .hero-left a {
+    display: block !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    word-break: break-word !important;
+  }
+
+}
+/* ===== HERO TRUST STATS MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  /* Wrapper that holds the trust items */
+  .hero-trust,
+  .hero-stats,
+  .trust-stats {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 20px 0 !important;
+    text-align: center !important;
+  }
+
+  /* Each trust item */
+  .hero-trust span,
+  .hero-stats span,
+  .trust-stats span {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+  }
+
+  /* Icons size fix */
+  .hero-trust span i,
+  .hero-trust span img {
+    font-size: 16px !important;
+  }
+
+}
+
 
 /* ================= OUR PROMISE ================= */
 
@@ -1003,16 +1472,19 @@ primary-btn,
 
 .testimonials-header {
   max-width: 700px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;   /* 🔥 THIS centers the block */
+  text-align: center;
 }
 
 .testimonials-header h2 {
   font-family: 'Playfair Display', serif;
   font-size: 42px;
+  text-align: center;
 }
 
 .testimonials-header p {
   color: #6f8f6a;
+  text-align: center;
 }
 
 /* VIEWPORT */
@@ -1055,6 +1527,24 @@ primary-btn,
   background: #698366;
   color: #f2eded;
 }
+/* ===== TESTIMONIAL CARD HOVER EFFECT ===== */
+.testimonial-card {
+  transition: 
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);   /* gentle lift */
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;      /* subtle contrast */
+}
+
+/* Optional: star glow on hover */
+.testimonial-card:hover .stars {
+  color: #ff7a2f;
+}
 
 
 
@@ -1065,6 +1555,41 @@ primary-btn,
     min-width: 100%;
   }
 }
+
+
+.testimonials-header h2 {
+  max-width: 800px;
+}
+
+.testimonials-header p {
+  max-width: 600px;
+  margin-top: 8px;
+}
+
+/* Subtitle styling */
+.testimonials-header p {
+  color: #6f8f6a;
+  font-size: 16px;
+  margin-top: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Green decorative line */
+.testimonials-header p::after {
+  content: "";
+  display: block;
+  width: 80px;          /* 👈 controls line length */
+  height: 2px;          /* 👈 line thickness */
+  background-color: #6f8f6a;
+  margin: 10px auto 0;  /* 👈 centers the line */
+  border-radius: 2px;
+}
+
+
+
+
+
 
 
 /* ================= PREVENTION-FOCUSED HEALTHCARE ================= */
@@ -1783,4 +2308,70 @@ button:hover {
     gap: 10px;
     text-align: center;
   }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.hero {
+  min-height: 100vh;
+  padding: 40px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 6vw, 52px);
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-top: 12px;
+}
+@media (max-width: 768px) {
+  .hero,
+  .hero-content,
+  .container,
+  .section,
+  .row {
+    flex-direction: column !important;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 26px; }
+  h2 { font-size: 22px; }
+  p  { font-size: 15px; }
+
+  section {
+    padding: 32px 16px;
+  }
+}
+/* === FINAL HEADER BASE (DO NOT TOUCH) === */
+.site-header {
+  background: #fffaf4;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
