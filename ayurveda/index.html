@@ -545,6 +545,137 @@
 
 
 
+
+
+<!-- ================= FAQ SECTION ================= -->
+<section class="faq-section" id="faq">
+  <div class="faq-container">
+
+    <span class="faq-tag">FAQ</span>
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <!-- FAQ 1 -->
+      <div class="faq-item active">
+        <button class="faq-question">
+          <span>How do I book an appointment?</span>
+          <span class="faq-icon">−</span>
+        </button>
+        <div class="faq-answer">
+          You can book an appointment by calling the hospital’s listed contact numbers or by booking directly through our website.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do I need to book an appointment before consultation?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes, prior appointment is recommended to ensure proper consultation time and personalized care.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is international consultation available?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes, international patients can consult Dr. Dolly through online tele-consultations and Panchakarma guidance programs.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Are international cards accepted?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          International payments are accepted via approved digital and online payment methods. Please contact us for details.
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Where can I get my prescribed medicines?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Prescribed Ayurvedic medicines are available at our hospital pharmacy or can be shipped to selected locations.
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Does the hospital provide Panchakarma treatments?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes, we specialize in authentic Panchakarma therapies including detox, rejuvenation, and preventive wellness programs.
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is health insurance accepted?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Currently, treatments are self-paid. Insurance applicability may vary — please confirm with our team.
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is GST included in the treatment charges?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          GST is applicable as per government norms and will be clearly mentioned in the final billing.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll(".faq-question").forEach(question => {
+    question.addEventListener("click", () => {
+      const item = question.closest(".faq-item");
+      const icon = question.querySelector(".faq-icon");
+      const isOpen = item.classList.contains("active");
+
+      // Close all FAQs
+      document.querySelectorAll(".faq-item").forEach(faq => {
+        faq.classList.remove("active");
+        const i = faq.querySelector(".faq-icon");
+        if (i) i.textContent = "+";
+      });
+
+      // Toggle current
+      if (!isOpen) {
+        item.classList.add("active");
+        icon.textContent = "−";
+      } else {
+        item.classList.remove("active");
+        icon.textContent = "+";
+      }
+    });
+  });
+</script>
+
+
+
+
 <section class="consult-section section-bg-organic">
   <div class="container">
 <section class="consult-section" id="consultation">

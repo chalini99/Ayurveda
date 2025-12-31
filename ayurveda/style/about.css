@@ -355,6 +355,16 @@ nav a {
   max-width: 540px;
 }
 
+
+
+
+
+
+
+
+
+
+
 /* STATS */
 .stats {
   display: flex;
@@ -520,6 +530,95 @@ nav a {
   border-radius: 20px;
   cursor: pointer;
 }
+/* ===============================
+   DOCTOR SECTION – MOBILE FIX
+================================ */
+
+@media (max-width: 768px) {
+
+  .doctor {
+    padding: 60px 16px;
+  }
+
+  .doctor .doctor-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .doctor .doctor-content {
+    max-width: 100%;
+  }
+
+  .doctor h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .doctor p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* IMAGE FIX */
+  .doctor .doctor-image {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .doctor .doctor-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  /* STATS CARDS STACK */
+  .doctor .stats {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+}
+
+/* ===============================
+   DOCTOR STATS – MOBILE FIX
+   FORCE 3 CARDS HORIZONTAL
+================================ */
+
+@media (max-width: 768px) {
+
+  .doctor .stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .doctor .stats .stat-card {
+    padding: 16px 10px;
+    border-radius: 16px;
+  }
+
+  .doctor .stats .stat-card h3 {
+    font-size: 18px;
+  }
+
+  .doctor .stats .stat-card p {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .doctor .stats img,
+  .doctor .stats svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
 /* ===== HUMAN TOUCH STORY ===== */
 
 .human-touch {
@@ -576,6 +675,91 @@ nav a {
   font-size: 17px;
   line-height: 1.7;
   color: #5a7f62;
+}
+/* ===============================
+   HUMAN TOUCH SECTION – RESPONSIVE
+================================ */
+
+.human-touch {
+  padding: 100px 20px;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+.human-touch .human-container {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+/* icon */
+.human-touch .human-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #eef5ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+/* heading */
+.human-touch h2 {
+  font-size: 42px;
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+
+/* main paragraph */
+.human-touch .human-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #4a4a4a;
+  max-width: 760px;
+  margin: 0 auto 40px;
+}
+
+/* highlighted quote */
+.human-touch .human-quote {
+  max-width: 720px;
+  margin: auto;
+  padding-left: 20px;
+  border-left: 4px solid #7a9b84;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #6b8f7a;
+  text-align: left;
+}
+
+/* ===============================
+   HUMAN TOUCH – MOBILE FIX
+================================ */
+
+@media (max-width: 768px) {
+
+  .human-touch {
+    padding: 60px 16px;
+  }
+
+  .human-touch h2 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .human-touch p {
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .human-touch .human-quote {
+    margin-top: 24px;
+    padding-left: 16px;
+    font-size: 15px;
+    text-align: left;
+  }
 }
 
 /* ===== PROFESSIONAL CREDENTIALS ===== */
@@ -1746,3 +1930,249 @@ img {
     padding: 32px 16px;
   }
 }
+
+
+
+/* ===============================
+   FORCE MOBILE HORIZONTAL CARDS
+   DO NOT TOUCH ABOVE STYLES
+================================ */
+
+@media (max-width: 768px) {
+
+  .doctor .stats {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .doctor .stats .stat-card {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    padding: 14px 8px !important;
+    border-radius: 14px !important;
+    text-align: center;
+  }
+
+  .doctor .stats .stat-card h3 {
+    font-size: 16px !important;
+  }
+
+  .doctor .stats .stat-card p {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+
+  .doctor .stats .stat-card img,
+  .doctor .stats .stat-card svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+}
+@media (max-width: 768px) {
+  .doctor .stats * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+
+
+/* ===============================
+   CREDENTIALS – MOBILE FIX
+================================ */
+
+@media (max-width: 768px) {
+
+  .credentials-section {
+    padding: 60px 16px;
+  }
+
+  .credentials-heading h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  /* GRID → STACK */
+  .credentials-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* BOTH CARDS FULL WIDTH */
+  .credentials-card {
+    width: 100% !important;
+    padding: 24px !important;
+    border-radius: 20px;
+  }
+
+  /* LEFT CARD */
+  .credentials-card.light h3,
+  .credentials-card.dark h3 {
+    font-size: 22px;
+  }
+
+  .credential-item {
+    gap: 12px;
+    margin: 18px 0;
+  }
+
+  .credential-item strong {
+    font-size: 16px;
+  }
+
+  .credential-item p {
+    font-size: 14px;
+  }
+
+  /* RIGHT CARD STATS → 2x2 GRID */
+  .credentials-card.dark {
+    padding: 24px !important;
+  }
+
+  .credentials-card.dark .stats-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+  }
+
+  .credentials-card.dark .stat-box {
+    padding: 18px !important;
+    border-radius: 16px;
+  }
+
+  .credentials-card.dark .stat-box h4 {
+    font-size: 22px;
+  }
+
+  .credentials-card.dark .stat-box p {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+}
+
+
+/* ===============================
+   RECOGNITION SECTION – MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+  .recognition-section {
+    padding: 60px 16px;
+  }
+
+  /* HEADING */
+  .recognition-section h2 {
+    font-size: 30px;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .recognition-section p {
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  /* GRID → STACK */
+  .recognition-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    margin-top: 40px;
+  }
+
+  /* CARD FIX */
+  .recognition-card {
+    width: 100% !important;
+    padding: 24px !important;
+    border-radius: 20px;
+    text-align: left;
+  }
+
+  /* ICON */
+  .recognition-card .icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 12px;
+  }
+
+  /* TITLE */
+  .recognition-card h3 {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  /* TEXT */
+  .recognition-card p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+/* ===============================
+   PHILOSOPHY SECTION – MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+  .philosophy-section {
+    padding: 60px 16px;
+  }
+
+  /* Top badge */
+  .philosophy-section .section-tag {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  /* Heading */
+  .philosophy-section h2 {
+    font-size: 30px;
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  /* Main card */
+  .philosophy-card {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+
+  /* Quote text */
+  .philosophy-card blockquote,
+  .philosophy-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  /* Author section */
+  .philosophy-author {
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .philosophy-author strong {
+    font-size: 15px;
+  }
+
+  .philosophy-author span {
+    font-size: 13px;
+  }
+
+  /* Decorative circles — disable on mobile */
+  .philosophy-card::before,
+  .philosophy-card::after,
+  .philosophy-card .decor-circle {
+    display: none !important;
+  }
+}
+
