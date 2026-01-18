@@ -60,9 +60,6 @@ body:not(.about-page) .help-btn {
 
 
 
-.logo {
-  height: 50px;
-}
 
 /* NAVBAR */
 .navbar {
@@ -94,6 +91,34 @@ body:not(.about-page) .help-btn {
   color: #666;
 }
 
+
+
+
+/* HEADER LOGO – FORCE SIZE */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* FORCE LOGO IMAGE SIZE */
+.logo img {
+  max-height: 45px;   /* 👈 THIS is the key */
+  width: auto;
+  display: block;
+}
+
+header img {
+  max-height: 45px !important;
+}
+
+
+
+
+
+
+
+
+
 nav a {
   margin: 0 18px;
   text-decoration: none;
@@ -109,8 +134,8 @@ nav a {
 
 .socials span {
   border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 6px 8px;
+  border-radius: 2px;
+  padding: 2px 4px;
   font-size: 14px;
 }
 
@@ -291,12 +316,30 @@ nav a {
 }
 
 /* Ensure icons don’t stretch */
+
 .social-icons-premium a {
-  display: flex;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  width: 28px !important;
+  height: 28px !important;
+
+  padding: 0 !important;          /* 👈 THIS is the key fix */
+  margin: 0 !important;
+
+  border: 1.2px solid #000;
+  border-radius: 8px;
+
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
+  line-height: 1;
 }
 
+
+.social-icons-premium i {
+  font-size: 14px;          /* 👈 icon size */
+  color: #000;
+}
 /* Keep Get Help at extreme right */
 .help-btn {
   margin-left: 10px;
@@ -450,20 +493,54 @@ nav a {
 }
 
 .hero-left {
-  width: 46%;
+  width: 35%;
 }
 
 .hero-left h1 {
-  font-size: 64px;
-  line-height: 1.15;
-  margin-bottom: 22px;
+  font-size: clamp(56px, 5vw, 96px) !important;
+  line-height: 1.10 !important;
+  font-weight: 600;
+  max-width: 100% !important;
+  margin: 0;
 }
 
+.hero-left h1 {
+  letter-spacing: -0.5px;
+}
+
+
 .hero-left p {
-  font-size: 16px;
+  font-size: 18px;
   color: #555;
   max-width: 520px;
+  line-height: 1.6;
 }
+@media (max-width: 992px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 48px;
+  }
+
+  .hero-left p {
+    margin: 0 auto;
+  }
+
+  .hero-right {
+    height: 360px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-left h1 {
+    font-size: 38px;
+    line-height: 1.15;
+  }
+}
+
 
 /* RIGHT SIDE */
 /* RIGHT CONTAINER */
@@ -1916,14 +1993,27 @@ textarea {
 
 .form-footer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
+  margin-top: 30px;
 }
 
+
 .form-footer label {
-  font-size: 14px;
-  color: #555;
+  display: flex;
+  align-items: center;      /* 👈 KEY FIX */
+  gap: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+.form-footer label input {
+  width: 16px;
+  height: 16px;
+  margin: 0;               /* 👈 removes browser default misalignment */
+  cursor: pointer;
 }
 
 button {
@@ -2725,33 +2815,7 @@ img {
     width: 100%;
   }
 
-  /* LOGO BLOCK */
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    max-width: 80%;
-  }
-
-  .logo img {
-    width: 34px;
-    height: auto;
-    flex-shrink: 0;
-  }
-
-  .logo strong {
-    font-size: 18px;
-    line-height: 1.1;
-    white-space: nowrap;
-  }
-
-  .logo small {
-    font-size: 11px;
-    display: block;
-    margin-top: 2px;
-    white-space: nowrap;
-  }
-
+  
   /* HIDE DESKTOP ITEMS */
   .nav-links,
   .nav-actions {
@@ -2794,30 +2858,7 @@ img {
     box-sizing: border-box;
   }
 
-  /* LOGO */
-  .logo {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    max-width: calc(100% - 60px) !important;
-  }
-
-  .logo img {
-    width: 34px !important;
-    height: auto !important;
-    flex-shrink: 0 !important;
-  }
-
-  .logo strong {
-    font-size: 18px !important;
-    line-height: 1.1 !important;
-    white-space: nowrap !important;
-  }
-
-  .logo small {
-    font-size: 11px !important;
-    white-space: nowrap !important;
-  }
+  
 
   /* KILL DESKTOP ELEMENTS */
   .nav-links,
@@ -2836,4 +2877,251 @@ img {
     cursor: pointer !important;
     flex-shrink: 0 !important;
   }
+}
+
+
+/* ===============================
+   GLOBAL SECTION SPACING FIX
+================================ */
+
+section {
+  padding-top: 72px !important;
+  padding-bottom: 72px !important;
+}
+
+
+.hero {
+  padding-top: 100px !important;
+  padding-bottom: 80px !important;
+}
+
+.promise-section,
+.expertise-section,
+.global-section,
+.prevention-section,
+.testimonials-section,
+.faq-section {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+.consult-section {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+@media (max-width: 768px) {
+  section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}
+/* PROMISE SECTION SPACING FIX */
+.promise-section {
+  padding: 80px 6%;
+  background: #ffffff;
+}
+
+/* GRID */
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* CARD */
+.promise-card {
+  background: #fbf9f4;
+  border-radius: 22px;
+  padding: 36px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.promise-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+}
+
+/* 🔥 PREMIUM ICON (REPLACES EMOJIS) */
+.icon-premium {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 22px;
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #2f5d50, #6fa98c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 14px 30px rgba(47, 93, 80, 0.35);
+}
+
+.icon-premium i {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+/* TEXT */
+.promise-card h3 {
+  font-size: 34px;
+  margin-bottom: 6px;
+  color: #3a2f25;
+}
+
+.promise-card h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #3a2f25;
+}
+
+.promise-card p {
+  font-size: 14px;
+  color: #6a5f55;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .promise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .promise-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* ===============================
+   BIG BOOK APPOINTMENT BUTTON
+================================ */
+
+.book-btn {
+  background: linear-gradient(135deg, #2f5d3a, #6f8f6a);
+  color: #ffffff;
+  padding: 14px 34px;
+  border-radius: 999px;
+
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 14px 30px rgba(47, 93, 58, 0.35);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Hover – premium lift */
+.book-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 45px rgba(47, 93, 58, 0.45);
+  background: linear-gradient(135deg, #244c2f, #5f8060);
+}
+
+/* Click feedback */
+.book-btn:active {
+  transform: scale(0.96);
+}
+/* ===============================
+   MOBILE BOOK BUTTON NEXT TO TOGGLE
+================================ */
+
+/* Hide mobile actions on desktop */
+.mobile-actions {
+  display: none;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+
+  /* Show mobile actions */
+  .mobile-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Compact mobile book button */
+  .mobile-book {
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #2f5d3a, #6f8f6a);
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 8px 18px rgba(47, 93, 58, 0.35);
+  }
+
+  .mobile-book:hover {
+    background: linear-gradient(135deg, #244c2f, #5f8060);
+  }
+
+  /* Ensure toggle visible */
+  .menu-toggle {
+    display: flex !important;
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Hide desktop nav + actions */
+  .nav-links,
+  .nav-actions {
+    display: none !important;
+  }
+}
+/* ===============================
+   STICKY HEADER – FINAL FIX
+================================ */
+
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #fffaf4;
+}
+
+/* Push page content down */
+body {
+  padding-top: 100px;
+}
+/* === HARD FORCE LOGO SIZE FIX === */
+.site-header .logo {
+  height: 65px;
+  overflow: hidden;
+}
+
+.site-header .logo img {
+  height:65px !important;   /* 👈 PERFECT desktop size */
+  width: auto !important;
+  max-height: 85px !important;
+  display: block;
+}
+
+/* ===== HOME PAGE LOGO – FINAL FIX ===== */
+.site-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-header .logo img {
+  width: 68px !important;   /* 👈 THIS is the key */
+  height: auto !important;
+  max-width: none !important;
 }
