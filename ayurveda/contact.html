@@ -7,135 +7,220 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
 
   <link rel="stylesheet" href="style/contact.css" />
 </head>
 <body>
-    <header class="top-navbar">
-        <div class="nav-container">
-      
-          <!-- LOGO -->
-          <div class="nav-logo">
-            <img src="images/aksram.png" alt="Aksharam" />
-            <span>
-              <strong>AKSHARAM</strong>
-              <small>ayurved hospital</small>
-            </span>
-          </div>
-      
-          <!-- MENU -->
-          <nav class="nav-links" id="navLinks">
-            <a href="index.html">Home</a>
-            <a href="aboutUS.html">About</a>
-            <a href="service.html">Services ▾</a>
-            <a href="contact.html" class="active">Contact Us</a>
-          </nav>
-      
-          <!-- RIGHT ACTIONS -->
-          <div class="nav-actions">
-            <div class="social-icons">
-              <a>f</a>
-              <a>X</a>
-              <a>◎</a>
-              <a>in</a>
-            </div>
-            <a href="contact.html" class="help-btn">Get Help?</a>
-          </div>
-      
-          <!-- HAMBURGER -->
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-      
-        </div>
-      </header>
-      
+  <header class="site-header">
+    <div class="nav-container">
 
-
-<section class="contact-section">
-
-  <!-- LEFT : FORM -->
-  <div class="contact-form reveal">
-    <h1>Schedule Your Online<br/>Consultation</h1>
-    <p>Fill out the form to book an appointment with our Ayurvedic experts.</p>
-
-    <form>
-      <div class="field">
-        <input type="text" required />
-        <label>Full Name</label>
-      </div>
-
-      <div class="field-row">
-        <div class="field">
-          <input type="email" required />
-          <label>Email</label>
-        </div>
-        <div class="field">
-          <input type="tel" required />
-          <label>Contact No.</label>
+      <!-- LOGO (LEFT) -->
+      <div class="logo">
+        <img src="./images/logoBG.png" alt="Aksharam Ayurved">
+        <div>
+          <strong>AKSHARAM</strong>
+          <small>ayurved hospital</small>
         </div>
       </div>
 
-      <div class="field">
-        <textarea rows="3"></textarea>
-        <label>Additional Information</label>
+      <!-- TOGGLE (RIGHT - MOBILE) -->
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+      <!-- NAV LINKS -->
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <!-- ACTIONS -->
+      <div class="nav-actions">
+        <div class="social-icons-premium">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <button class="help-btn">Book Appointment</button>
       </div>
 
-      <div class="checkbox">
-        <input type="checkbox" required />
-        <span>I agree to the terms and conditions, privacy policy.</span>
-      </div>
-
-      <button type="submit">Submit Request</button>
-    </form>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" aria-label="Close menu">✕</button>
+  
+    <nav class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Services <span>▾</span></a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
   </div>
 
-  <!-- RIGHT : INFO -->
-  <div class="contact-info reveal">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const closeBtn = document.querySelector(".close-menu");
+  
+      toggle.addEventListener("click", () => {
+        mobileMenu.classList.add("active");
+      });
+  
+      closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+      });
+    });
+  </script>
+  
 
-    <div class="info-block">
-      <h4>Message Us</h4>
-      <p>📧 aksharamayurved@gmail.com</p>
-      <p>📞 +91-85304-22103 (Online Consultation)</p>
+  <section class="contact-section">
+
+    <!-- LEFT : FORM -->
+    <div class="contact-form reveal">
+      <h1>Schedule Your Online<br/>Consultation</h1>
+      <p>Fill out the form to book an appointment with our Ayurvedic experts.</p>
+  
+      <form id="whatsappForm">
+        <div class="field">
+          <input type="text" name="name" required />
+          <label>Full Name</label>
+        </div>
+  
+        <div class="field-row">
+          <div class="field">
+            <input type="email" name="email" required />
+            <label>Email</label>
+          </div>
+          <div class="field">
+            <input type="tel" name="phone" required />
+            <label>Contact No.</label>
+          </div>
+        </div>
+  
+        <div class="field">
+          <textarea rows="3" name="message"></textarea>
+          <label>Additional Information</label>
+        </div>
+  
+        <div class="checkbox">
+          <input type="checkbox" required />
+          <span>I agree to the terms and conditions, privacy policy.</span>
+        </div>
+  
+        <button type="submit">Submit Request</button>
+      </form>
     </div>
-
-    <div class="info-block">
-      <h4>Follow Us</h4>
-      <div class="socials">
-        <a>f</a>
-        <a>x</a>
-        <a>◎</a>
-        <a>in</a>
+  
+    <!-- RIGHT : INFO -->
+    <div class="contact-info reveal">
+  
+      <div class="info-block">
+        <h4>Message Us</h4>
+        <p>📧 aksharamayurved@gmail.com</p>
+        <p>📞 +91-85304-22103 (Online Consultation)</p>
       </div>
+  
+      <div class="info-block">
+        <h4>Follow Us</h4>
+        <div class="socials">
+          <a>f</a>
+          <a>x</a>
+          <a>◎</a>
+          <a>in</a>
+        </div>
+      </div>
+  
+      <div class="info-block">
+        <h4>Working Hours</h4>
+        <p><strong>Hospital</strong></p>
+        <p>Mon – Sat: 9:00 AM – 7:00 PM</p>
+        <p>Sunday: 10:00 AM – 2:00 PM</p>
+        <p class="emergency">Emergency Only</p>
+      </div>
+  
+      <div class="info-block">
+        <h4>Tele-Consultations</h4>
+        <ul>
+          <li>Available 7 days a week</li>
+          <li>Multiple time zones supported</li>
+          <li>Emergency consultations: 24/7</li>
+        </ul>
+      </div>
+  
+      <iframe 
+        src="https://maps.google.com/maps?q=Asarwa%20Ahmedabad&t=&z=13&ie=UTF8&iwloc=&output=embed">
+      </iframe>
+  
     </div>
-
-    <div class="info-block">
-      <h4>Working Hours</h4>
-      <p><strong>Hospital</strong></p>
-      <p>Mon – Sat: 9:00 AM – 7:00 PM</p>
-      <p>Sunday: 10:00 AM – 2:00 PM</p>
-      <p class="emergency">Emergency Only</p>
-    </div>
-
-    <div class="info-block">
-      <h4>Tele-Consultations</h4>
-      <ul>
-        <li>Available 7 days a week</li>
-        <li>Multiple time zones supported</li>
-        <li>Emergency consultations: 24/7</li>
-      </ul>
-    </div>
-
-    <iframe 
-      src="https://maps.google.com/maps?q=Asarwa%20Ahmedabad&t=&z=13&ie=UTF8&iwloc=&output=embed">
-    </iframe>
-
-  </div>
-
-</section>
-
+  
+  </section>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+      /* ===== REVEAL ANIMATION ===== */
+      const reveals = document.querySelectorAll(".reveal");
+    
+      const revealOnScroll = () => {
+        reveals.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 80) {
+            el.classList.add("active");
+          }
+        });
+      };
+    
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+    
+    
+      /* ===== WHATSAPP FORM SUBMIT ===== */
+      const form = document.getElementById("whatsappForm");
+    
+      form.addEventListener("submit", function(e){
+        e.preventDefault();
+    
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const phone = form.phone.value.trim();
+        const message = form.message.value.trim();
+    
+        if(phone.length < 10){
+          alert("Please enter a valid contact number");
+          return;
+        }
+    
+        const whatsappNumber = "918530422103";
+    
+        const whatsappMessage = `
+    🌿 *New Online Consultation Request* 🌿
+    
+    👤 Name: ${name}
+    📧 Email: ${email}
+    📞 Phone: ${phone}
+    📝 Message: ${message || "N/A"}
+    
+    Please contact the patient for consultation.
+        `;
+    
+        const whatsappURL =
+          "https://wa.me/" +
+          whatsappNumber +
+          "?text=" +
+          encodeURIComponent(whatsappMessage);
+    
+        window.open(whatsappURL, "_blank");
+      });
+    
+    });
+    </script>
+    
 <footer class="footer">
 
   <div class="footer-grid">

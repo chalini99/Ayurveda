@@ -7,56 +7,77 @@
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
 
   <link rel="stylesheet" href="style/service.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="nav-container">
-      
-          <!-- LEFT : LOGO -->
-          <div class="nav-left">
-            <img src="images/aksram.png" alt="Sattva Ayurved Hospital">
-          </div>
-      
-          <!-- CENTER : MENU -->
-          <nav class="nav-center" id="navMenu">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="service.html" class="nav-link">Services</a>
-            <a href="contact.html" class="nav-link">Contact Us</a>
-          </nav>
-      
-          <!-- RIGHT : SOCIAL + CTA -->
-          <div class="nav-right">
-            <div class="nav-social">
-              <a href="#">f</a>
-              <a href="#">X</a>
-              <a href="#">⦿</a>
-              <a href="#">in</a>
-            </div>
-            <a href="#" class="help-btn">Get Help?</a>
-          </div>
-      
-          <!-- HAMBURGER -->
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-      
+  <header class="site-header">
+    <div class="nav-container">
+
+      <!-- LOGO (LEFT) -->
+      <div class="logo">
+        <img src="./images/logoBG.png" alt="Aksharam Ayurved">
+        <div>
+          <strong>AKSHARAM</strong>
+          <small>ayurved hospital</small>
         </div>
-      </header>
+      </div>
+
+      <!-- TOGGLE (RIGHT - MOBILE) -->
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+      <!-- NAV LINKS -->
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <!-- ACTIONS -->
+      <div class="nav-actions">
+        <div class="social-icons-premium">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <button class="help-btn">Book Appointment</button>
+      </div>
+
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" aria-label="Close menu">✕</button>
+  
+    <nav class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="service.html">Services <span>▾</span></a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
       
-      <script>
-        const hamburger = document.getElementById("hamburger");
-        const navMenu = document.getElementById("navMenu");
-      
-        hamburger.addEventListener("click", () => {
-          navMenu.classList.toggle("active");
-        });
-      </script>
-      
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const closeBtn = document.querySelector(".close-menu");
+  
+      toggle.addEventListener("click", () => {
+        mobileMenu.classList.add("active");
+      });
+  
+      closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+      });
+    });
+  </script>
+  
 
       <section class="hero">
         <div class="hero-bg"></div>
@@ -94,24 +115,7 @@
           
       
           <!-- RIGHT IMAGES -->
-          <div class="hero-images">
-      
-            <div class="hero-img small tag-orange">
-              <img src="images/treatment.jpg" alt="Skin Treatment">
-              <span>Skin Disease</span>
-            </div>
-      
-            <div class="hero-img large tag-green">
-              <img src="images/treat2.jpg" alt="Abhyanga">
-              <span>Abhyanga</span>
-            </div>
-      
-            <div class="hero-img small tag-light">
-              <img src="images/treat3.jpg" alt="Diabetes">
-              <span>Diabetes</span>
-            </div>
-      
-          </div>
+          
       
         </div>
       </section>

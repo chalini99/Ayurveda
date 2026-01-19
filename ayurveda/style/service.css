@@ -1487,4 +1487,250 @@
       box-shadow:0 0 0 0 rgba(47,107,63,0);
     }
   }
+
+  /* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+  --bg-cream: #fff8ef;
+  --green: #2f5d3a;
+  --green-dark: #23472c;
+  --text-dark: #1f2933;
+  --border-light: #d9d9d9;
+  --transition: all 0.3s ease;
+}
+
+/* =========================
+   HEADER
+========================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--bg-cream);
+  border-bottom: 1px solid #eee;
+}
+
+/* =========================
+   NAV CONTAINER
+========================= */
+.nav-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 48px;
+  height: auto;
+}
+
+.logo strong {
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: var(--text-dark);
+  font-family: "Georgia", serif;
+}
+
+.logo small {
+  display: block;
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: -2px;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+.nav-links {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--text-dark);
+  font-weight: 500;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--green);
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--green);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   NAV ACTIONS
+========================= */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+.social-icons-premium {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons-premium a {
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid var(--border-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 16px;
+  transition: var(--transition);
+  background: transparent;
+}
+
+.social-icons-premium a:hover {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   HELP BUTTON
+========================= */
+.help-btn {
+  background: var(--green);
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  font-size: 15px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.help-btn:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   MOBILE TOGGLE
+========================= */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE MENU OVERLAY
+========================= */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 2000;
+  padding: 32px 24px;
+  transform: translateX(100%);
+  transition: var(--transition);
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+.close-menu {
+  background: none;
+  border: none;
+  font-size: 28px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE NAV LINKS
+========================= */
+.mobile-nav {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  font-size: 22px;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.mobile-nav a:hover {
+  color: var(--green);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-actions {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+.service-card .image-wrap {
+  margin-bottom: 8px; /* reduce space below image */
+}
+.service-card h3 {
+  margin-top: 6px;   /* reduce space above title */
+  margin-bottom: 6px;
+}
+.service-card p {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
   
